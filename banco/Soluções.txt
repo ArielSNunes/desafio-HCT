@@ -1,0 +1,11 @@
+1 c) Criação de uma tabela no banco de dados
+
+2 SELECT * FROM cadastro;
+
+3 SELECT * FROM cadastro WHERE estado = "SP";
+
+4 DELETE FROM cadastro WHERE estado = "SP" AND comentarios = "Desativado";
+
+5 SELECT * FROM cadastro GROUP BY email;        
+
+6 ALTER TABLE cadastro ADD COLUMN id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY;

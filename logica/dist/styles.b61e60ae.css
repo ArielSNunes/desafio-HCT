@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#tableColumn {
+  display: none;
+}
+
+#tableColumn #change {
+  color: red;
+}
+
+
+/*# sourceMappingURL=/styles.b61e60ae.css.map */

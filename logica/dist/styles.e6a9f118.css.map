@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles.css"],"names":[],"mappings":"AAAA,EACE,QAAS,CACT,SAAU,CACV,qBACF,CAEA,aACE,YACF,CAEA,qBACE,SACF","file":"styles.e6a9f118.css","sourceRoot":"../src","sourcesContent":["* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\n#tableColumn {\n  display: none;\n}\n\n#tableColumn #change {\n  color: red;\n}\n"]}

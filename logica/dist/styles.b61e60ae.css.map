@@ -1,0 +1,1 @@
+{"version":3,"sources":["css/styles.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"styles.b61e60ae.css","sourceRoot":"../src","sourcesContent":["* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\n#tableColumn {\n  display: none;\n}\n\n#tableColumn #change {\n  color: red;\n}\n"]}
