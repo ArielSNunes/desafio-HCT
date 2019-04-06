@@ -39,6 +39,8 @@ const SELECTORS = {
   // Função para adicionar o evento no botão de remover um campo de produto
   function reloadEventOnCloseBtn() {
     $(SELECTORS.removeBtn).click(function (e) {
+      if ($(SELECTORS.productsList).length <= 1)
+        return
       $(e.currentTarget).parent().parent().remove()
     })
   }
@@ -48,7 +50,7 @@ const SELECTORS = {
     $(SELECTORS.productsList + ':last')
       .clone().appendTo('#products')
       .find('input').val('')
-    reloadEventOnCloseBtn(e)
+    reloadEventOnCloseBtn()
   }
   // Função que percorre a lista de produtos e returna um array com os valores
   function generatePricesArray() {
@@ -118,4 +120,5 @@ const SELECTORS = {
   // Eventos
   $(SELECTORS.newProdBtn).click(newProdBtnClick)
   $(SELECTORS.calcBtn).click(calcBtnClick)
+  reloadEventOnCloseBtn()
 }

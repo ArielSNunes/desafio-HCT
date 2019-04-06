@@ -16256,6 +16256,7 @@ var SELECTORS = {
 
   var reloadEventOnCloseBtn = function reloadEventOnCloseBtn() {
     (0, _jquery.default)(SELECTORS.removeBtn).click(function (e) {
+      if ((0, _jquery.default)(SELECTORS.productsList).length <= 1) return;
       (0, _jquery.default)(e.currentTarget).parent().parent().remove();
     });
   }; // Função para adicionar um campo de produto
@@ -16264,7 +16265,7 @@ var SELECTORS = {
 
   var newProdBtnClick = function newProdBtnClick(e) {
     (0, _jquery.default)(SELECTORS.productsList + ':last').clone().appendTo('#products').find('input').val('');
-    reloadEventOnCloseBtn(e);
+    reloadEventOnCloseBtn();
   }; // Função que percorre a lista de produtos e returna um array com os valores
 
 
@@ -16295,7 +16296,11 @@ var SELECTORS = {
         var qt = parseInt(iterationChange / changesObj[singleChangeObj].value);
         newObj[singleChangeObj] = {};
         newObj[singleChangeObj].qt = qt;
-        if (qt) newObj[singleChangeObj].value = changesObj[singleChangeObj].value;
+
+        if (qt) {
+          newObj[singleChangeObj].value = changesObj[singleChangeObj].value;
+        }
+
         iterationChange = parseFloat(iterationChange - qt * changesObj[singleChangeObj].value).toFixed(2);
       }
 
@@ -16326,7 +16331,7 @@ var SELECTORS = {
     var change = calculateChangeCoins(total);
     if (change < 0) return _sweetalert.default.fire({
       type: 'error',
-      title: 'Oops...',
+      title: 'Ocorreu um erro',
       text: 'Dinheiro insuficiente para pagar a conta'
     });
     (0, _jquery.default)(SELECTORS.tableColumn).fadeIn();
@@ -16338,6 +16343,7 @@ var SELECTORS = {
 
   (0, _jquery.default)(SELECTORS.newProdBtn).click(newProdBtnClick);
   (0, _jquery.default)(SELECTORS.calcBtn).click(calcBtnClick);
+  reloadEventOnCloseBtn();
 }
 },{"jquery":"../node_modules/jquery/dist/jquery.js","sweetalert2":"../node_modules/sweetalert2/dist/sweetalert2.all.js","popper.js":"../node_modules/popper.js/dist/esm/popper.js","bootstrap/dist/css/bootstrap.min.css":"../node_modules/bootstrap/dist/css/bootstrap.min.css"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -16367,7 +16373,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50979" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52622" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
